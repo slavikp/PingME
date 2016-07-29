@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "PingME",
+  "description": "Verify the connectivity of your IP devices, Slava_Pashanin",
+  "version": "0.1",
+  "icons": {
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+  },
+  "background": {
+      "page": "bgIndex.html"
+  },
+  "browser_action": {
+      "default_icon": "img/icon.png",
+      "default_popup": "index.html"
+  },
+  "permissions": [
+      "notifications",
+      "*://*/"
+  ]
+}

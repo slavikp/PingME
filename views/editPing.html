@@ -1,0 +1,20 @@
+<header class="content header cf">
+    <a href="#/" class="btn btn-white"><i class="fa fa-chevron-left"></i> Home</a>
+</header>
+
+<section class="content">
+  <form name="editPingForm" class="panel cf css-form" ng-submit="saveProbe()">
+      <div class="text-input">
+          <input type="text" ng-model="probe.title" placeholder="Ping Name" tabindex="1" required autofocus="on">
+          <div class="underline"></div>
+      </div>
+      <div class="text-input">
+          <input type="url" ng-model="probe.url" placeholder="Ping URL" tabindex="2" required>
+          <div class="underline"></div>
+      </div>
+      <div class="submit-area right">
+          <a href="#/config" class="btn btn-white" tabindex="4">Cancel</a>
+          <button type="submit" class="btn" ng-disabled="editPingForm.$invalid" tabindex="3">{{ isNew ? 'Add' : 'Save' }}</button>
+      </div>
+  </form>
+</section>

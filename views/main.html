@@ -1,0 +1,35 @@
+<header class="content header cf">
+  <div class="header-left">&nbsp;</div>
+  <div class="header-center">
+    <button ng-click="pingNow()" class="btn" ng-disabled="!probes.length">Ping now</button>
+  </div>
+  <div class="header-right">
+    <a href="#/config" class="header-item"><i class="fa fa-cog"></i></a>
+  </div>
+</header>
+
+<section class="content">
+  <div ng-hide="probes.length" class="no-pings">
+      <div class="no-pings-lbl">There are no resources to ping!</div>
+      <a href="#/ping/new" class="btn">Add new resource</a>
+  </div>
+
+  <div ng-repeat="probe in probes" class="ping panel">
+    <div class="ping-title ping-ellipsis" title="{{ probe.data.title }}">{{ probe.data.title }}</div>
+    <a href="{{ probe.data.url }}" target="_blank" class="link ping-url ping-ellipsis">{{ probe.data.url }}</a>
+
+    <div class="ping-timing timing-{{ probe.quality }}" ng-hide="probe.isPristine">
+        <span ng-if="probe.isFail" class="timing-icon">
+            <i class="fa fa-exclamation-triangle"></i>
+        </span>
+        <span ng-if="!probe.isFail">
+            <span class="timing-value">{{ probe.ms }}</span><span class="timing-units">ms</span>
+        </span>
+    </div>
+    <i class="fa fa-refresh fa-spin timing-inProgress" ng-show="probe.inProgress"></i>
+  </div>
+</section>
+
+TO Complete:
+copyright,
+contacts, REPORT BUG
